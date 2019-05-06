@@ -7,7 +7,7 @@ public class SharedPrefManager {
 
 
 
-	private SharedPreferences sp;
+	private  SharedPreferences sp;
 	private SharedPreferences.Editor editor;
 
 	private final String SP_NAME = "loginsession";
@@ -36,8 +36,8 @@ public class SharedPrefManager {
 		editor.commit();
 	}
 
-	public static String getKeyNama() {
-		return SP_NAMA;
+	public String getKeyNama() {
+		return sp.getString(SP_NAMA,"");
 	}
 
 	public static String getKeyEmail() {
