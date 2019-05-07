@@ -13,7 +13,7 @@ public class SharedPrefManager {
 	private final String SP_NAME = "loginsession";
 
 	public static final String SP_NAMA = "nama" ;
-	public static final String SP_PASS = "password";
+	public static final String SP_EMAIL = "email";
 	public static final String SP_SUDAH_LOGIN = "sudah login" ;
 
 	public SharedPrefManager(Context context){
@@ -40,8 +40,8 @@ public class SharedPrefManager {
 		return sp.getString(SP_NAMA,"");
 	}
 
-	public static String getKeyEmail() {
-		return SP_PASS;
+	public String getKeyEmail() {
+		return sp.getString(SP_EMAIL,"");
 	}
 
 	public boolean Login(){

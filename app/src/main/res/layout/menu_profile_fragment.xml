@@ -15,20 +15,31 @@
         android:id="@+id/txtnama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hallo"
+        android:text="Nama"
         android:textSize="28sp"
         android:layout_below="@+id/prof"
         android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/txtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="28sp"
+        android:layout_below="@+id/txtnama"
+        android:gravity="center"/>
+
+
 
     <Button
         android:id="@+id/btn_Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_nama"
-        android:layout_marginTop="48dp"
+
         android:text="Log out"
         android:textAllCaps="false"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
 
 
 

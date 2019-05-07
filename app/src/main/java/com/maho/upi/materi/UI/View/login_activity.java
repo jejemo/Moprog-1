@@ -25,17 +25,19 @@ public class login_activity extends AppCompatActivity {
 	EditText nama;
 	@BindView(R.id.edt_email)
 	EditText email;
-	@BindView(R.id.btn_Login)
-	Button btn;
+//	@BindView(R.id.btn_Login)
+//	Button btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		nama = findViewById(R.id.edt_nama);
-		email = findViewById(R.id.edt_email);
-		btn = findViewById(R.id.btn_Login);
+		ButterKnife.bind(this);
+
+//		nama = findViewById(R.id.edt_nama);
+//		email = findViewById(R.id.edt_email);
+//		btn = findViewById(R.id.btn_Login);
 		sharedPrefManager = new SharedPrefManager(this);
 
 		ceklogin();
@@ -51,27 +53,27 @@ public class login_activity extends AppCompatActivity {
 		}
 	}
 
-	private void login() {
-	btn.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
+	@OnClick(R.id.btn_Login) void login() {
+//	btn.setOnClickListener(new View.OnClickListener() {
+//		@Override
+//		public void onClick(View v) {
 			String n = nama.getText().toString();
 			String e = email.getText().toString();
-			if (n.equals("Admin") && e.equals("Admin")){
+			//if (n.equals("Admin") && e.equals("Admin")){
 				Toast.makeText(getApplicationContext(), "Success Login", Toast.LENGTH_SHORT).show();
 				sharedPrefManager.saveSPString(SharedPrefManager.SP_NAMA, n);
-				sharedPrefManager.saveSPString(SharedPrefManager.SP_PASS, n);
+				sharedPrefManager.saveSPString(SharedPrefManager.SP_EMAIL, n);
 
 				sharedPrefManager.saveSPBolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
 
 
 				Intent intent = new Intent(login_activity.this, MainActivity.class);
 				startActivity(intent);
-			}else {
-				Toast.makeText(getApplicationContext(), "Username atau Password Salah", Toast.LENGTH_SHORT).show();
-			}
+//			}else {
+//				Toast.makeText(getApplicationContext(), "Username atau Password Salah", Toast.LENGTH_SHORT).show();
+//			}
 		}
-	});
+//	});
 
-	}
+//	}
 }

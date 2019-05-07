@@ -20,7 +20,7 @@ import com.maho.upi.materi.Utils.SharedPrefManager;
 @SuppressWarnings("ALL")
 public class menuProfileFragment extends Fragment {
 	View v;
-	private TextView txtNama;
+	private TextView txtNama, txtEmail;
 	private Button btnLogout;
 	//private PreferenceHelper preferenceHelper;
 	private SharedPrefManager sharedPrefManager;
@@ -37,9 +37,11 @@ public class menuProfileFragment extends Fragment {
 		//preferenceHelper = PreferenceHelper.getInstance(getContext().getApplicationContext());
 
 		txtNama = (TextView) v.findViewById(R.id.txtnama);
+		txtEmail = (TextView) v.findViewById(R.id.txtemail);
 		btnLogout = (Button) v.findViewById(R.id.btn_Logout);
 
 		txtNama.setText("" + sharedPrefManager.getKeyNama());
+		txtEmail.setText("" + sharedPrefManager.getKeyEmail());
 
 		btnLogout.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -47,6 +49,7 @@ public class menuProfileFragment extends Fragment {
 				Intent intent = new Intent(getActivity(), login_activity.class);
 				startActivity(intent);
 				sharedPrefManager.saveSPBolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+
 		//		preferenceHelper.setLogin(false);
 			}
 		});
