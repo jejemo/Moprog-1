@@ -36,6 +36,12 @@ public class SharedPrefManager {
 		editor.commit();
 	}
 
+	public void clearKEY(){
+		editor.remove(getKeyNama())
+				.remove(getKeyEmail())
+				.apply();
+	}
+
 	public String getKeyNama() {
 		return sp.getString(SP_NAMA,"");
 	}

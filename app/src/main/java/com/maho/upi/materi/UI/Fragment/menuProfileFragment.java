@@ -49,6 +49,7 @@ public class menuProfileFragment extends Fragment {
 				Intent intent = new Intent(getActivity(), login_activity.class);
 				startActivity(intent);
 				sharedPrefManager.saveSPBolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+				sharedPrefManager.clearKEY();
 
 		//		preferenceHelper.setLogin(false);
 			}
