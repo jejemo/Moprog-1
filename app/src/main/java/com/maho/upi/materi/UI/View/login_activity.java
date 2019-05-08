@@ -25,8 +25,8 @@ public class login_activity extends AppCompatActivity {
 	EditText nama;
 	@BindView(R.id.edt_email)
 	EditText email;
-//	@BindView(R.id.btn_Login)
-//	Button btn;
+	@BindView(R.id.btn_Login)
+	Button btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +35,9 @@ public class login_activity extends AppCompatActivity {
 
 		ButterKnife.bind(this);
 
-//		nama = findViewById(R.id.edt_nama);
-//		email = findViewById(R.id.edt_email);
-//		btn = findViewById(R.id.btn_Login);
+		nama = findViewById(R.id.edt_nama);
+		email = findViewById(R.id.edt_email);
+		btn = findViewById(R.id.btn_Login);
 		sharedPrefManager = new SharedPrefManager(this);
 
 		ceklogin();
@@ -53,10 +53,11 @@ public class login_activity extends AppCompatActivity {
 		}
 	}
 
-	@OnClick(R.id.btn_Login) void login() {
-//	btn.setOnClickListener(new View.OnClickListener() {
-//		@Override
-//		public void onClick(View v) {
+	//@OnClick(R.id.btn_Login)
+	public void login() {
+	btn.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
 			String n = nama.getText().toString();
 			String e = email.getText().toString();
 			//if (n.equals("Admin") && e.equals("Admin")){
@@ -73,7 +74,7 @@ public class login_activity extends AppCompatActivity {
 //				Toast.makeText(getApplicationContext(), "Username atau Password Salah", Toast.LENGTH_SHORT).show();
 //			}
 		}
-//	});
+	});
 
-//	}
+	}
 }

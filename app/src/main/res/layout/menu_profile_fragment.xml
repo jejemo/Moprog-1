@@ -35,7 +35,7 @@
         android:id="@+id/btn_Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginBottom="78dp"
         android:text="Log out"
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"
